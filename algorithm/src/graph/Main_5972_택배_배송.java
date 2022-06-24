@@ -28,6 +28,7 @@ public class Main_5972_택배_배송 {
 			graph.get(u).add(new int[] {v, w});
 			graph.get(v).add(new int[] {u, w});
 		}
+		// dijkstra's algorithm을 이용하면 해결할 수 있는 문제
 		PriorityQueue<int[]> pq = new PriorityQueue<>((x, y) -> Integer.compare(x[1], y[1]));
 		boolean[] visited = new boolean[N+1];
 		pq.offer(new int[] {1, 0});
