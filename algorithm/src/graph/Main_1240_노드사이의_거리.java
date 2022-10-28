@@ -11,6 +11,7 @@ import java.util.StringTokenizer;
 public class Main_1240_노드사이의_거리 {
 
 	public static void main(String[] args) throws IOException {
+		// 입력
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		StringTokenizer st = new StringTokenizer(br.readLine());
 		int N = Integer.parseInt(st.nextToken());
@@ -27,6 +28,8 @@ public class Main_1240_노드사이의_거리 {
 			graph.get(a).add(new int[] {b, c});
 			graph.get(b).add(new int[] {a, c});
 		}
+		// 각 노드 사이의 거리를 구하기 위해 BFS를 사용한다.
+		// 트리 특성 상 각 노드 사이의 경로는 단 하나뿐이기 때문에 dijkstra's algorithm을 사용하지 않아도 된다.
 		StringBuilder sb = new StringBuilder();
 		outer: for (int i = 0; i < M; i++) {
 			st = new StringTokenizer(br.readLine());
